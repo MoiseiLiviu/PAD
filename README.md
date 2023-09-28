@@ -103,7 +103,7 @@ Real-life examples:
    APIs to request any required data from another service. This maintains encapsulation and ensures changes to one
    service's data model don't impact other services.
 
-### GraphQL schema
+### Gateway GraphQL schema
 
 ```
 type CategoryGraphqlType {
