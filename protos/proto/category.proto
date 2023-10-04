@@ -1,0 +1,33 @@
+syntax = 'proto3';
+
+package category;
+
+option go_package = "go-gateway/grpc-client;grpc_client";
+
+service CategoryService {
+  rpc CreateCategory(CreateCategoryRequest) returns (CreateCategoryResponse) {}
+  rpc GetAll(GetAllCategoriesRequest) returns (GetAllCategoriesResponse) {}
+}
+
+message GetAllCategoriesRequest {}
+
+message GetAllCategoriesResponse {
+  repeated CategoryPayload categories = 1;
+}
+
+message CategoryPayload {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message CreateCategoryRequest {
+  string name = 1;
+  string description = 2;
+}
+
+message CreateCategoryResponse {
+  int32 status = 1;
+  string error = 2;
+  int32 categoryId = 3;
+}

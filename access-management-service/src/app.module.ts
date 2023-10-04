@@ -7,9 +7,14 @@ import { UserModule } from "./user/user.module";
 import {getTypeOrmConfig} from '@nest-upskilling/common';
 import { UserEntity } from "./user/infrastructure/typeorm/entities/user.entity";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import {ThrottlerModule} from "@nestjs/throttler";
 
 @Module({
   imports: [
+    ThrottlerModule.forRoot([{
+      ttl: 60000,
+      limit: 200,
+    }]),
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: ".env"

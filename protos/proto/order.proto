@@ -1,0 +1,42 @@
+syntax = 'proto3';
+
+package order;
+
+option go_package = "go-gateway/grpc-client;grpc_client";
+
+service OrderService {
+  rpc InitOrder(InitOrderRequest) returns (InitOrderResponse) {}
+  rpc GetOrderStatus(GetOrderStatusRequest) returns (GetOrderStatusResponse) {}
+}
+
+message GetOrderStatusRequest {
+  int32 orderId = 1;
+}
+
+message GetOrderStatusResponse {
+  OrderStatus status = 1;
+}
+
+enum OrderStatus {
+  UNKNOWN = 0;
+  CREATED = 1;
+  APPROVED = 2;
+  PAID = 3;
+  PAYMENT_FAILED = 4;
+  ITEMS_REJECTED = 5;
+}
+
+message InitOrderRequest {
+  int32 userId = 1;
+  repeated CartItemPayload items = 2;
+}
+
+message InitOrderResponse {
+  int32 orderId = 1;
+}
+
+message CartItemPayload {
+  int32 productId = 1;
+  int32 quantity = 2;
+  double price = 3;
+}

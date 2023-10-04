@@ -6,9 +6,6 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "proto:install": "npm i git+https://github.com/MoiseiLiviu/upskilling-protos.git",
-    "proto:gen": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=./node_modules/upskilling-protos/proto --ts_proto_out=src/auth/interface/grpc/proto node_modules/upskilling-protos/proto/auth.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
-    "proto:update": "npm run proto:install && npm run proto:gen",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -33,6 +30,7 @@
     "@nestjs/microservices": "^9.4.0",
     "@nestjs/passport": "^9.0.3",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/throttler": "^5.0.0",
     "@nestjs/typeorm": "^9.0.1",
     "bcrypt": "^5.1.0",
     "passport-jwt": "^4.0.1",

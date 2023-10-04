@@ -1,0 +1,47 @@
+syntax = 'proto3';
+
+package product;
+
+option go_package = "go-gateway/grpc-client;grpc_client";
+
+service ProductService {
+  rpc GetById(GetProductByIdRequest) returns (ProductPayload) {}
+  rpc CreateProduct(CreateProductRequest) returns (ProductPayload) {}
+  rpc CheckProductAvailability(CheckProductAvailabilityRequest) returns (CheckProductAvailabilityResponse) {}
+}
+
+message CheckProductAvailabilityResponse {
+  bool isAvailable = 1;
+}
+
+message CheckProductAvailabilityRequest {
+  int32 productId = 1;
+  int32 quantity = 2;
+}
+
+message CreateProductRequest {
+  string name = 2;
+  double price = 3;
+  int32 unitsAvailable = 4;
+  string imageUrl = 5;
+  int32 userId = 6;
+  repeated int32 categoriesId = 7;
+}
+
+message GetProductByIdRequest {
+  int32 id = 1;
+}
+
+message ProductCategoryPayload {
+  int32 id = 1;
+  string name = 2;
+}
+
+message ProductPayload {
+  int32 id = 1;
+  string name = 2;
+  double price = 3;
+  int32 unitsAvailable = 4;
+  string imageUrl = 5;
+  repeated ProductCategoryPayload categories = 6;
+}

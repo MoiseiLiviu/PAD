@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "go-gateway/grpc-client;grpc_client";
+
+service AuthService {
+  rpc RegisterUser (RegisterUserInput) returns (RegistrationResponse) {}
+  rpc LoginUser (LoginInput) returns (LoginResponse) {}
+  rpc Refresh (RefreshRequest) returns (RefreshResponse) {}
+  rpc Logout (LogoutRequest) returns (LogoutResponse) {}
+  rpc Validate(ValidateRequest) returns (ValidateResponse) {}
+}
+
+message RegistrationResponse {
+  int64 userId = 1;
+}
+
+message LogoutRequest {}
+
+message LogoutResponse {
+  repeated string logoutCookie = 1;
+}
+
+message LoginResponse {
+  string accessTokenCookie = 1;
+  string refreshTokenCookie = 2;
+}
+
+message RefreshRequest {
+  string refreshToken = 1;
+}
+
+message RefreshResponse {
+  string accessTokenCookie = 1;
+}
+
+message RegisterUserInput {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginInput {
+  string email = 1;
+  string password = 2;
+}
+
+message ValidateRequest {
+  string token = 1;
+}
+
+message ValidateResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  int32 userId = 3;
+}
