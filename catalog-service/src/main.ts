@@ -1,6 +1,8 @@
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { AppModule } from './app.module';
+import { GrpcRateLimiterInterceptor } from '../../common/src/interceptors/rate-limiter.interceptor';
+import { TimeoutInterceptor } from '../../common/src/interceptors/timeout.interceptor';
 
 require('dotenv').config();
 
@@ -28,6 +30,9 @@ async function bootstrap() {
       },
     },
   });
+  app.useGlobalInterceptors(new GrpcRateLimiterInterceptor());
+  app.useGlobalInterceptors(new TimeoutInterceptor());
+
   await app.startAllMicroservices();
 }
 
