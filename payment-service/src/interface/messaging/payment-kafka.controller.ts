@@ -4,7 +4,7 @@ import {
   LoggerAdapterToken,
   LoggerPort,
   OrderApprovedEvent,
-} from '@nest-upskilling/common';
+} from '@pad_lab/common';
 import { InitPaymentPort } from '../../application/ports/input/init-payment.port';
 import { INIT_PAYMENT_USE_CASE } from '../../tokens/payment-tokens';
 

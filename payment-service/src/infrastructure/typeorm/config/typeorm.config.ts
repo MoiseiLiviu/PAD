@@ -8,7 +8,7 @@ import {
   DB_PORT,
   DB_SSL,
   DB_USERNAME,
-} from '@nest-upskilling/common';
+} from '@pad_lab/common';
 
 export const getTypeOrmConfig = (
   configService: ConfigService,

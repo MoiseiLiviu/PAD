@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { OutboxEntity } from '../entities/outbox.entity';
 import { Outbox } from '../../../domain/models/outbox';
-import { OutboxStatus } from '@nest-upskilling/common';
+import { OutboxStatus } from '@pad_lab/common';
 import { OutboxEntityMapper } from '../mapper/outbox-entity.mapper';
 import { InjectRepository } from '@nestjs/typeorm';
 

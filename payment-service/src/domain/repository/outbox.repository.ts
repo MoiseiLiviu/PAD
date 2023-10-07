@@ -1,4 +1,4 @@
-import { SagaStatus } from '@nest-upskilling/common';
+import { SagaStatus } from '@pad_lab/common';
 import { Outbox } from '../models/outbox';
 
 export interface OutboxRepository {

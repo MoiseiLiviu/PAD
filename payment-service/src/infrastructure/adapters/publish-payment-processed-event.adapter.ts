@@ -6,7 +6,7 @@ import {
   LoggerPort,
   PaymentProcessedSuccessfullyEvent,
   PaymentProcessingFailedEvent,
-} from '@nest-upskilling/common';
+} from '@pad_lab/common';
 
 @Injectable()
 export class PublishPaymentProcessedEventAdapter

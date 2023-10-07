@@ -1,4 +1,4 @@
-import { AbstractEntity } from '@nest-upskilling/common';
+import { AbstractEntity } from '@pad_lab/common';
 import { Column, Entity } from 'typeorm';
 import { PaymentStatus } from '../../../domain/models/payment-status.enum';
 

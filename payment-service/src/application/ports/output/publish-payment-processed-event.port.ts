@@ -1,7 +1,7 @@
 import {
   PaymentProcessedSuccessfullyEvent,
   PaymentProcessingFailedEvent,
-} from '@nest-upskilling/common';
+} from '@pad_lab/common';
 
 export interface PublishPaymentProcessedEventPort {
   successful(

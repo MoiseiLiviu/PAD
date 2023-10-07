@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ProcessPaymentAdapter } from './adapters/process-payment.adapter';
 import { PaymentTypeormModule } from './typeorm/payment-typeorm.module';
 import { PROCESS_PAYMENT_ADAPTER } from '../tokens/payment-tokens';
-import { LoggerModule } from '@nest-upskilling/common';
+import { LoggerModule } from '@pad_lab/common';
 
 @Module({
   imports: [PaymentTypeormModule, LoggerModule],

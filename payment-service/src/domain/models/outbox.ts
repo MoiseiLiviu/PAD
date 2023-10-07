@@ -1,4 +1,4 @@
-import { OutboxStatus, SagaStatus } from '@nest-upskilling/common';
+import { OutboxStatus, SagaStatus } from '@pad_lab/common';
 
 export class Outbox {
   id: number;

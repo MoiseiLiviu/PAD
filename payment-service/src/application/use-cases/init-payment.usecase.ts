@@ -10,7 +10,7 @@ import {
   PaymentProcessingFailure,
   PaymentProcessingFailureReason,
   SagaStatus,
-} from '@nest-upskilling/common';
+} from '@pad_lab/common';
 import { InitPaymentPort } from '../ports/input/init-payment.port';
 import { PaymentStatus } from '../../domain/models/payment-status.enum';
 import { ProcessPaymentPort } from '../ports/output/process-payment.port';

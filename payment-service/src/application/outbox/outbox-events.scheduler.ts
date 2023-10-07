@@ -5,7 +5,7 @@ import {
   LoggerAdapterToken,
   LoggerPort,
   OutboxStatus,
-} from '@nest-upskilling/common';
+} from '@pad_lab/common';
 import { ClientKafka } from '@nestjs/microservices';
 import { OutboxRepositoryToken } from '../../tokens/payment-tokens';
 import { CronJob } from 'cron';

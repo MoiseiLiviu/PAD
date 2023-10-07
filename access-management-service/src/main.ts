@@ -19,8 +19,8 @@ async function bootstrap() {
     );
 
     app.useGlobalFilters(new HttpExceptionFilter());
-    app.useGlobalInterceptors(new GrpcRateLimiterInterceptor());
-    app.useGlobalInterceptors(new TimeoutInterceptor());
+    // app.useGlobalInterceptors(new GrpcRateLimiterInterceptor());
+    // app.useGlobalInterceptors(new TimeoutInterceptor());
 
     await app.listen();
 }

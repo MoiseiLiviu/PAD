@@ -11,7 +11,7 @@ import {
   LoggerAdapterToken,
   LoggerModule,
   LoggerPort,
-} from '@nest-upskilling/common';
+} from '@pad_lab/common';
 import { PaymentRepository } from '../domain/repository/payment.repository';
 import { ProcessPaymentPort } from './ports/output/process-payment.port';
 import { OutboxRepository } from '../domain/repository/outbox.repository';
