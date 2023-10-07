@@ -11,7 +11,7 @@ import {
   OutboxStatus,
   ProductApprovalFailReason,
   SagaStatus,
-} from '@nest-upskilling/common';
+} from '@pad_lab/common';
 import { ProductRepository } from '../../domain/repository/product.repository';
 import { Product } from '../../domain/models/product.model';
 import { OutboxRepository } from '../../domain/repository/outbox.repository';

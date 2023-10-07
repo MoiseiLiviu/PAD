@@ -3,7 +3,7 @@ import {
   AbstractEntity,
   OutboxStatus,
   SagaStatus,
-} from '@nest-upskilling/common';
+} from '@pad_lab/common';
 
 @Entity('outbox')
 export class OutboxEntity extends AbstractEntity {

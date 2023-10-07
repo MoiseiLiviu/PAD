@@ -7,8 +7,6 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "proto:install": "npm i git+https://github.com/MoiseiLiviu/upskilling-protos.git",
-    "proto:order": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=./node_modules/upskilling-protos/proto --ts_proto_out=src/proto node_modules/upskilling-protos/proto/order.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -24,7 +22,6 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.8.14",
     "@grpc/proto-loader": "^0.7.7",
-    "@nest-upskilling/common": "file:../common",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.3.2",
     "@nestjs/core": "^9.0.0",
@@ -32,6 +29,7 @@
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/schedule": "^2.2.2",
     "@nestjs/typeorm": "^9.0.1",
+    "@pad_lab/common": "^1.0.2",
     "cron": "^2.3.1",
     "dotenv": "^16.1.4",
     "kafka-js": "^0.0.0",
@@ -41,7 +39,6 @@
     "rxjs": "^7.2.0",
     "sqlite3": "^5.1.6",
     "ts-proto": "^1.147.2",
-    "upskilling-protos": "github:MoiseiLiviu/upskilling-protos",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

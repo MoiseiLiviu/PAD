@@ -12,7 +12,7 @@ async function bootstrap() {
       transport: Transport.GRPC,
       options: {
         package: protobufPackage,
-        protoPath: 'node_modules/protos/proto/order.proto',
+        protoPath: 'node_modules/@pad_lab/common/protos/proto/order.proto',
         url: '0.0.0.0:5003',
       },
     },

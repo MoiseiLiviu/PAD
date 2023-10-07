@@ -1,4 +1,4 @@
-import { OrderCreatedEvent } from '@nest-upskilling/common';
+import { OrderCreatedEvent } from '@pad_lab/common';
 
 export interface ApproveOrderItemsPort {
   execute(orderCreatedEvent: OrderCreatedEvent);

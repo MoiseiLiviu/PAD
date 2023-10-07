@@ -20,7 +20,7 @@ import {
   LoggerAdapterToken,
   LoggerModule,
   LoggerPort,
-} from '@nest-upskilling/common';
+} from '@pad_lab/common';
 import { ProductInfrastructureModule } from '../infrastructure/product-infrastructure.module';
 import { OutboxRepository } from '../domain/repository/outbox.repository';
 import { OutboxEventsScheduler } from './outbox/outbox-events.scheduler';

@@ -1,4 +1,4 @@
-import { AbstractEntity } from '@nest-upskilling/common';
+import { AbstractEntity } from '@pad_lab/common';
 import { Column, Entity, OneToMany } from 'typeorm';
 import { OrderItemEntity } from './order-item.entity';
 import { OrderStatus } from '../../../domain/models/order-status';

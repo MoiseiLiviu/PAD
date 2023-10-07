@@ -1,5 +1,5 @@
 import { Controller, Inject } from '@nestjs/common';
-import { LoggerAdapterToken, LoggerPort } from '@nest-upskilling/common';
+import { LoggerAdapterToken, LoggerPort } from '@pad_lab/common';
 import { GrpcMethod } from '@nestjs/microservices';
 import {
   GetOrderStatusRequest,

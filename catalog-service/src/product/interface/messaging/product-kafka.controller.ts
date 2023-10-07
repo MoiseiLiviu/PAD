@@ -4,7 +4,7 @@ import {
   LoggerPort,
   OrderCreatedEvent,
   PaymentProcessingFailedEvent
-} from "@nest-upskilling/common";
+} from "@pad_lab/common";
 import { Ctx, KafkaContext, MessagePattern, Payload, Transport } from "@nestjs/microservices";
 import { APPROVE_ORDER_ITEMS_USE_CASE, ROLLBACK_PRODUCTS_AVAILABLE_QUANTITY } from "../../tokens/product.tokens";
 import { ApproveOrderItemsPort } from "../../application/ports/input/approve-order-items.port";

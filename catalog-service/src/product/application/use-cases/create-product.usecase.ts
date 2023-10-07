@@ -3,7 +3,7 @@ import { ProductRepository } from '../../domain/repository/product.repository';
 import { Product } from '../../domain/models/product.model';
 import { GetCategoriesByIdsPort } from '../ports/output/get-categories-by-ids.port';
 import { CreateProductPort } from '../ports/input/create-product.port';
-import { LoggerPort } from '@nest-upskilling/common';
+import { LoggerPort } from '@pad_lab/common';
 
 export class CreateProductUseCase implements CreateProductPort {
   constructor(

@@ -8,7 +8,7 @@ import { OrderEntity } from '../../infrastructure/typeorm/entities/order.entity'
 import { OutboxEntity } from '../../infrastructure/typeorm/entities/outbox.entity';
 import { OrderRepoImpl } from '../../infrastructure/typeorm/repository/order-repo-impl';
 import { OutboxRepoImpl } from '../../infrastructure/typeorm/repository/outbox-repo.impl';
-import { LoggerAdapterToken, LoggerPort } from '@nest-upskilling/common';
+import { LoggerAdapterToken, LoggerPort } from '@pad_lab/common';
 import {
   OrderRepositoryToken,
   OutboxRepositoryToken,

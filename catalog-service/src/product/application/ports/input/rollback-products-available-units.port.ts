@@ -1,4 +1,4 @@
-import { CartItemDto } from '@nest-upskilling/common';
+import { CartItemDto } from '@pad_lab/common';
 
 export interface RollbackProductsAvailableUnitsPort {
   execute(products: CartItemDto[]): Promise<void>;

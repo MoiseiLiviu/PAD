@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ProductTypeormModule } from './typeorm/product-typeorm.module';
-import { LoggerModule } from '@nest-upskilling/common';
+import { LoggerModule } from '@pad_lab/common';
 
 @Module({
   imports: [LoggerModule, ProductTypeormModule],

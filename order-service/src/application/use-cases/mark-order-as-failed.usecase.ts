@@ -1,7 +1,7 @@
 import { MarkOrderAsFailedPort } from '../ports/input/mark-order-as-failed.port';
 import { OrderRepository } from '../../domain/repository/order.repository';
 import { OrderStatus } from '../../domain/models/order-status';
-import { LoggerPort } from '@nest-upskilling/common';
+import { LoggerPort } from '@pad_lab/common';
 
 export class MarkOrderAsFailedUseCase implements MarkOrderAsFailedPort {
   constructor(

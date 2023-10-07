@@ -6,7 +6,7 @@ import {
   OrderApprovedEvent,
   OutboxStatus,
   SagaStatus,
-} from '@nest-upskilling/common';
+} from '@pad_lab/common';
 import { MarkOrderAsApprovedPort } from '../ports/input/mark-order-as-approved.port';
 import { OutboxRepository } from '../../domain/repository/outbox.repository';
 import { Outbox } from '../../domain/models/outbox';

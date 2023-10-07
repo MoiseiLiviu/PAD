@@ -1,7 +1,7 @@
 import { InitOrderPort } from '../ports/input/init-order.port';
 import { OrderRepository } from '../../domain/repository/order.repository';
 import { Order } from '../../domain/models/order.model';
-import { LoggerPort, OrderCreatedEvent } from '@nest-upskilling/common';
+import { LoggerPort, OrderCreatedEvent } from '@pad_lab/common';
 import { OrderItem } from '../../domain/models/order-item.model';
 import { InitOrderRequest } from '../../proto/order.pb';
 import { Outbox } from '../../domain/models/outbox';

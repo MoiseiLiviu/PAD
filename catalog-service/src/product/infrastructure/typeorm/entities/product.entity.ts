@@ -1,4 +1,4 @@
-import { AbstractEntity } from '@nest-upskilling/common';
+import { AbstractEntity } from '@pad_lab/common';
 import {Column, Entity, JoinTable, ManyToMany,} from 'typeorm';
 import { CategoryEntity } from "../../../../category/infrastructure/typeorm/entities/CategoryEntity";
 

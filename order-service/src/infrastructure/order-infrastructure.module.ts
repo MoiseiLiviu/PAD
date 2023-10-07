@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { OrderTypeormModule } from './typeorm/order-typeorm.module';
-import { LoggerModule } from '@nest-upskilling/common';
+import { LoggerModule } from '@pad_lab/common';
 
 @Module({
   imports: [LoggerModule, OrderTypeormModule],

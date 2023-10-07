@@ -3,7 +3,7 @@ import {
   LoggerAdapterToken,
   LoggerModule,
   LoggerPort,
-} from '@nest-upskilling/common';
+} from '@pad_lab/common';
 import {
   INIT_ORDER_USE_CASE,
   MARK_ORDER_AS_APPROVED_USE_CASE,

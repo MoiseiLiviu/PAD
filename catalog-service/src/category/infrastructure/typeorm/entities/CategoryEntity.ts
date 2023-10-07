@@ -1,7 +1,7 @@
-import { AbstractEntity } from '@nest-upskilling/common';
-import { Column, Entity, ManyToMany } from "typeorm";
+import { AbstractEntity } from "@pad_lab/common";
+import { Column, Entity } from "typeorm";
 
-@Entity('category')
+@Entity("category")
 export class CategoryEntity extends AbstractEntity {
   @Column()
   name: string;

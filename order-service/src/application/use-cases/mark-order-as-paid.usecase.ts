@@ -1,6 +1,6 @@
 import { MarkOrderAsPaidPort } from '../ports/input/mark-order-as-paid.port';
 import { MarkOrderAsPaidCommand } from '../dto/mark-order-as-paid.command';
-import { LoggerPort } from '@nest-upskilling/common';
+import { LoggerPort } from '@pad_lab/common';
 import { OrderRepository } from '../../domain/repository/order.repository';
 import { OrderStatus } from '../../domain/models/order-status';
 

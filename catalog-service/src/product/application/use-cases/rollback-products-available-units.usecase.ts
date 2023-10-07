@@ -1,6 +1,6 @@
 import { RollbackProductsAvailableUnitsPort } from '../ports/input/rollback-products-available-units.port';
 import { ProductRepository } from '../../domain/repository/product.repository';
-import { CartItemDto, LoggerPort } from '@nest-upskilling/common';
+import { CartItemDto, LoggerPort } from '@pad_lab/common';
 
 export class RollbackProductsAvailableUnitsUseCase
   implements RollbackProductsAvailableUnitsPort

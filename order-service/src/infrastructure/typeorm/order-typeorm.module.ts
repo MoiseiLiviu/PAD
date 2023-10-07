@@ -11,7 +11,7 @@ import { OrderItemEntity } from './entities/order-item.entity';
 import { getTypeOrmConfig } from './config/typeorm.config';
 import { OutboxEntity } from './entities/outbox.entity';
 import { OutboxRepoImpl } from './repository/outbox-repo.impl';
-import { LoggerModule } from '@nest-upskilling/common';
+import { LoggerModule } from '@pad_lab/common';
 
 @Module({
   providers: [

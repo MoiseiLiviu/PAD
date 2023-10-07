@@ -1,7 +1,7 @@
 import { NestFactory } from "@nestjs/core";
 import { MicroserviceOptions, Transport } from "@nestjs/microservices";
 import { AppModule } from "./app.module";
-import { GrpcRateLimiterInterceptor, TimeoutInterceptor } from "@nest-upskilling/common";
+import { GrpcRateLimiterInterceptor, TimeoutInterceptor } from "@pad_lab/common";
 
 require("dotenv").config();
 
@@ -12,8 +12,8 @@ async function bootstrap() {
     options: {
       package: ["category", "product"],
       protoPath: [
-        "node_modules/protos/proto/category.proto",
-        "node_modules/protos/proto/product.proto"
+        "node_modules/@pad_lab/common/protos/proto/category.proto",
+        "node_modules/@pad_lab/common/protos/proto/product.proto"
       ],
       url: "0.0.0.0:5002"
     }

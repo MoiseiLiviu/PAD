@@ -5,7 +5,7 @@ import { OrderEntity } from '../entities/order.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Order } from '../../../domain/models/order.model';
 import { OrderMapper } from '../mapper/order.mapper';
-import { LoggerAdapterToken, LoggerPort } from '@nest-upskilling/common';
+import { LoggerAdapterToken, LoggerPort } from '@pad_lab/common';
 import { OutboxRepositoryToken } from '../../../tokens/order-tokens';
 import { OutboxRepository } from '../../../domain/repository/outbox.repository';
 @Injectable()

@@ -1,5 +1,5 @@
 import { Outbox } from '../models/outbox';
-import { SagaStatus } from '@nest-upskilling/common';
+import { SagaStatus } from '@pad_lab/common';
 
 export interface OutboxRepository {
   save(outbox: Outbox): Promise<Outbox>;
