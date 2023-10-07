@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: access-management
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: access-management
+  template:
+    metadata:
+      labels:
+        app: access-management
+    spec:
+      containers:
+        - name: access-management
+          image: lmoisei/access-management-service:latest
+          ports:
+            - containerPort: 5001
+          env:
+            - name: JWT_TOKEN_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_TOKEN_SECRET
+            - name: JWT_REFRESH_TOKEN_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_REFRESH_TOKEN_SECRET
+            - name: JWT_TOKEN_EXPIRATION_EXPIRATION_TIME_SECONDS
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_TOKEN_EXPIRATION_EXPIRATION_TIME_SECONDS
+            - name: JWT_REFRESH_TOKEN_EXPIRATION_EXPIRATION_TIME_SECONDS
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_REFRESH_TOKEN_EXPIRATION_EXPIRATION_TIME_SECONDS
+            - name: DB_HOST
+              value: pgsql.default.svc.cluster.local
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: pgsql-secret
+                  key: username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pgsql-secret
+                  key: password
+            - name: DB_DATABASE
+              value: user

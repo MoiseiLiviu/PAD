@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+    spec:
+      containers:
+        - name: api-gateway
+          image: lmoisei/api-gateway:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: AUTH_SERVICE_URL
+              value: access-management-service:5001
+            - name: CART_SERVICE_URL
+              value: cart:5004
+            - name: CATEGORY_SERVICE_URL
+              value: catalog:5002
+            - name: PRODUCT_SERVICE_URL
+              value: catalog:5002
+            - name: ORDER_SERVICE_URL
+              value: order:5003

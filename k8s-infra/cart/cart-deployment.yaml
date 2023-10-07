@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cart
+  template:
+    metadata:
+      labels:
+        app: cart
+    spec:
+      containers:
+        - name: cart
+          image: lmoisei/cart-service:latest
+          ports:
+            - containerPort: 5004
+          env:
+            - name: MONGO_URL
+              value: mongodb://mongodb:27017/nest
+            - name: PRODUCT_SERVICE_URL
+              value: catalog:5002
+            - name: ORDER_SERVICE_URL
+              value: order:5003
