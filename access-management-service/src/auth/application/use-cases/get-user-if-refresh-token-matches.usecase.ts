@@ -1,7 +1,7 @@
 import { BcryptPort } from "../ports/output/bcrypt.port";
 import { GetUserIfRefreshTokenMatchesPort } from "../ports/input/get-user-if-refresh-token-matches.port";
 import { UserRepository } from "../../../user/domain/core/repositories/user-repository.interface";
-import { LoggerPort } from "@nest-upskilling/common";
+import { LoggerPort } from "@pad_lab/common";
 
 
 export class GetUserIfRefreshTokenMatchesUseCase

@@ -3,7 +3,7 @@ import { UserRepository } from '../../../user/domain/core/repositories/user-repo
 import {CreateCookieWithRefreshTokenUseCase} from "./create-cookie-with-refresh-token";
 import {JWTConfigPort} from "../ports/output/jwt-config.port";
 import {JWTPort} from "../ports/output/jwt.port";
-import {LoggerPort} from "@nest-upskilling/common/dist";
+import {LoggerPort} from "@pad_lab/common";
 import {BcryptPort} from "../ports/output/bcrypt.port";
 
 describe('CreateCookieWithRefreshTokenUseCase', () => {

@@ -1,7 +1,7 @@
 import { JWTConfigPort } from "../ports/output/jwt-config.port";
 import { CreateCookieWithAccessTokenPort } from "../ports/input/create-cookie-with-access-token.port";
 import { IJwtServicePayload, JWTPort } from "../ports/output/jwt.port";
-import { LoggerPort } from "@nest-upskilling/common";
+import { LoggerPort } from "@pad_lab/common";
 
 
 export class CreateCookieWithAccessTokenUseCase implements CreateCookieWithAccessTokenPort{

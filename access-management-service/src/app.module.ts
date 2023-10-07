@@ -6,7 +6,7 @@ import {UserModule} from "./user/user.module";
 
 import {UserEntity} from "./user/infrastructure/typeorm/entities/user.entity";
 import {TypeOrmModule} from "@nestjs/typeorm";
-import {DB_DATABASE, DB_HOST, DB_LOGGING, DB_PASSWORD, DB_PORT, DB_SSL, DB_USERNAME} from "@nest-upskilling/common";
+import {DB_DATABASE, DB_HOST, DB_LOGGING, DB_PASSWORD, DB_PORT, DB_SSL, DB_USERNAME} from "@pad_lab/common";
 
 @Module({
     imports: [

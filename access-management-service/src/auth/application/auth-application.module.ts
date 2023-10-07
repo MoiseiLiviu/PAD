@@ -34,7 +34,7 @@ import { LoginUseCase } from "./use-cases/login.usecase";
 import { ValidateCredentialsPort } from "./ports/input/validate-credentials.port";
 
 import { ValidateAccessTokenUseCase } from "./use-cases/validate-access-token.usecase";
-import { LoggerAdapterToken, LoggerModule, LoggerPort } from "@nest-upskilling/common";
+import { LoggerAdapterToken, LoggerModule, LoggerPort } from "@pad_lab/common";
 import { RefreshAccessTokenCookieUseCase } from "./use-cases/refresh-access-token-cookie.usecase";
 import { GetUserIfRefreshTokenMatchesPort } from "./ports/input/get-user-if-refresh-token-matches.port";
 

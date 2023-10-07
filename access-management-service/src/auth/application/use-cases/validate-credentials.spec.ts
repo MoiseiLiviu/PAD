@@ -1,6 +1,6 @@
 import { ValidateCredentialsUseCase } from './validate-credentials.usecase';
 
-import { LoggerPort } from '@nest-upskilling/common';
+import { LoggerPort } from '@pad_lab/common';
 import { UnauthorizedException } from "@nestjs/common";
 import {UserRepository} from "../../../user/domain/core/repositories/user-repository.interface";
 import {BcryptPort} from "../ports/output/bcrypt.port";

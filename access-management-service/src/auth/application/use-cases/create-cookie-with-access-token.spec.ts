@@ -1,7 +1,7 @@
 import {CreateCookieWithAccessTokenUseCase} from "./create-cookie-with-access-token.usecase";
 import {JWTConfigPort} from "../ports/output/jwt-config.port";
 import {JWTPort} from "../ports/output/jwt.port";
-import {LoggerPort} from "@nest-upskilling/common/dist";
+import {LoggerPort} from "@pad_lab/common";
 
 
 describe('CreateCookieWithAccessTokenUseCase', () => {

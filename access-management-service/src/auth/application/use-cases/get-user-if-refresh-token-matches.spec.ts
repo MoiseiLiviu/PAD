@@ -1,7 +1,7 @@
 import {GetUserIfRefreshTokenMatchesUseCase} from './get-user-if-refresh-token-matches.usecase';
 import {UserRepository} from '../../../user/domain/core/repositories/user-repository.interface';
 import {BcryptPort} from "../ports/output/bcrypt.port";
-import {LoggerPort} from "@nest-upskilling/common/dist";
+import {LoggerPort} from "@pad_lab/common";
 
 describe('GetUserIfRefreshTokenMatchesUseCase', () => {
     let useCase: GetUserIfRefreshTokenMatchesUseCase;

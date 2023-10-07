@@ -3,9 +3,7 @@ import {AppModule} from './app.module';
 import {MicroserviceOptions, Transport} from '@nestjs/microservices';
 import {protobufPackage} from './auth/interface/grpc/proto/auth.pb';
 import {HttpExceptionFilter} from "./auth/infrastructure/filter/all-exceptions.filter";
-import * as path from 'path';
-import {GrpcRateLimiterInterceptor} from "@nest-upskilling/common";
-import {TimeoutInterceptor} from "@nest-upskilling/common";
+import {GrpcRateLimiterInterceptor, TimeoutInterceptor} from "@pad_lab/common";
 
 async function bootstrap() {
     const app = await NestFactory.createMicroservice<MicroserviceOptions>(
@@ -15,7 +13,7 @@ async function bootstrap() {
             options: {
                 url: '0.0.0.0:5001',
                 package: [protobufPackage, 'grpc.health.v1'],
-                protoPath: [path.resolve(__dirname, '../../protos/proto/auth.proto'), path.resolve(__dirname, '../../protos/proto/health.proto')]
+                protoPath: ['node_modules/@pad_lab/common/protos/proto/auth.proto', 'node_modules/@pad_lab/common/protos/proto/health.proto']
             }
         },
     );

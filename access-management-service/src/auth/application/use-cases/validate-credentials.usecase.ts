@@ -2,7 +2,7 @@ import { ValidateCredentialsPort } from '../ports/input/validate-credentials.por
 import { BcryptPort } from '../ports/output/bcrypt.port';
 import { UserRepository } from '../../../user/domain/core/repositories/user-repository.interface';
 import { UnauthorizedException } from "@nestjs/common";
-import { LoggerPort } from '@nest-upskilling/common';
+import { LoggerPort } from '@pad_lab/common';
 
 export class ValidateCredentialsUseCase implements ValidateCredentialsPort {
   constructor(

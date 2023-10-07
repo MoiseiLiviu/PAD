@@ -3,7 +3,7 @@ import { JWTConfigPort } from '../ports/output/jwt-config.port';
 import { IJwtServicePayload, JWTPort } from '../ports/output/jwt.port';
 import { BcryptPort } from '../ports/output/bcrypt.port';
 import { UserRepository } from "../../../user/domain/core/repositories/user-repository.interface";
-import { LoggerPort } from '@nest-upskilling/common';
+import { LoggerPort } from '@pad_lab/common';
 
 export class CreateCookieWithRefreshTokenUseCase
   implements CreateCookieWithRefreshTokenPort

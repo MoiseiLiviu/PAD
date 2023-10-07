@@ -1,5 +1,5 @@
 import { Column, Entity, Index } from 'typeorm';
-import {AbstractEntity} from "@nest-upskilling/common";
+import {AbstractEntity} from "@pad_lab/common";
 
 @Entity('user')
 export class UserEntity extends AbstractEntity {
