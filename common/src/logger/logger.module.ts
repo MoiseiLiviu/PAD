@@ -1,14 +1,13 @@
 import {Module} from '@nestjs/common';
-import { GrpcLoggingInterceptor } from '../interceptors';
-import {LoggerAdapter} from "./logger-adapter";
+import {GrpcLoggingInterceptor} from '../interceptors';
 import {LoggerAdapterToken} from './logger.port';
-import {WinstonLoggerAdapter} from './winston-logger.adapter';
+import {LoggerAdapter} from "./logger-adapter";
 
 @Module({
     providers: [
         {
             provide: LoggerAdapterToken,
-            useClass: WinstonLoggerAdapter,
+            useClass: LoggerAdapter,
         },
         GrpcLoggingInterceptor
     ],

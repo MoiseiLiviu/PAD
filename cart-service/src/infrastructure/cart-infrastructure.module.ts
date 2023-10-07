@@ -6,6 +6,7 @@ import * as orderProto from './adapters/order/proto/order.pb';
 import {CartDataAccessModule} from './mongo/cart-data-access.module';
 import {
     CHECK_PRODUCT_AVAILABILITY_ADAPTER_TOKEN,
+    CircuitBreakerServiceToken,
     GET_PRODUCT_BY_ID_ADAPTER_TOKEN,
     INIT_ORDER_ADAPTER_TOKEN,
     ProductServiceToken,
@@ -13,7 +14,7 @@ import {
 import {CheckProductAvailabilityAdapter} from './adapters/product/check-product-availability.adapter';
 import {GetProductByIdAdapter} from './adapters/product/get-product-by-id.adapter';
 import {InitOrderAdapter} from './adapters/order/init-order-adapter.service';
-import {LoggerModule} from '@nest-upskilling/common';
+import {CircuitBreakerService, LoggerModule} from '@nest-upskilling/common';
 import {ConfigService} from '@nestjs/config';
 import * as path from 'path';
 
@@ -69,6 +70,10 @@ import * as path from 'path';
             provide: INIT_ORDER_ADAPTER_TOKEN,
             useClass: InitOrderAdapter,
         },
+        {
+            provide: CircuitBreakerServiceToken,
+            useClass: CircuitBreakerService
+        }
     ],
     exports: [
         CartDataAccessModule,

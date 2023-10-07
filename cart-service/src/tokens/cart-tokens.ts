@@ -7,3 +7,4 @@ export const CHECK_PRODUCT_AVAILABILITY_ADAPTER_TOKEN = 'CHECK_PRODUCT_AVAILABIL
 export const GET_PRODUCT_BY_ID_ADAPTER_TOKEN = 'GET_PRODUCT_BY_ID_ADAPTER_TOKEN';
 export const ProductServiceToken = 'ProductServiceToken';
 export const INIT_ORDER_ADAPTER_TOKEN = 'INIT_ORDER_ADAPTER_TOKEN';
+export const CircuitBreakerServiceToken = 'CircuitBreakerService';

@@ -19,7 +19,8 @@
     "winston-logstash-transport": "^2.0.0"
   },
   "devDependencies": {
-    "@types/node": "^18.16.3"
+    "@types/node": "^18.16.3",
+    "typescript": "^5.2.2"
   },
   "files": [
     "dist",

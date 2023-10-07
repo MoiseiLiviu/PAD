@@ -4,8 +4,8 @@ import {MicroserviceOptions, Transport} from '@nestjs/microservices';
 import {protobufPackage} from './auth/interface/grpc/proto/auth.pb';
 import {HttpExceptionFilter} from "./auth/infrastructure/filter/all-exceptions.filter";
 import * as path from 'path';
-import {GrpcRateLimiterInterceptor} from "../../common/src/interceptors/rate-limiter.interceptor";
-import {TimeoutInterceptor} from "../../common/src/interceptors/timeout.interceptor";
+import {GrpcRateLimiterInterceptor} from "@nest-upskilling/common";
+import {TimeoutInterceptor} from "@nest-upskilling/common";
 
 async function bootstrap() {
     const app = await NestFactory.createMicroservice<MicroserviceOptions>(
