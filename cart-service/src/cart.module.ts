@@ -4,7 +4,7 @@ import { CartController } from './interface/cart.controller';
 import { CartApplicationModule } from './application/cart-application.module';
 import { CartInfrastructureModule } from './infrastructure/cart-infrastructure.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { LoggerModule } from "@nest-upskilling/common/dist";
+import { LoggerModule } from "@pad_lab/common/dist";
 
 @Module({
   imports: [

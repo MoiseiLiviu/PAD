@@ -1,7 +1,7 @@
 import { ClearCartPort } from '../ports/input/clear-cart.port';
 import { CartRepository } from '../../domain/repositories/cart.repository';
 import { CartItemOperationResult } from '../../domain/models/cart-item-operation-result.interface';
-import { LoggerPort } from '@nest-upskilling/common';
+import { LoggerPort } from '@pad_lab/common';
 
 export class ClearCartUseCase implements ClearCartPort {
   constructor(

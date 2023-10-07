@@ -4,7 +4,7 @@ import { Cart } from '../../domain/models/cart.model';
 import { CartItem } from '../../domain/models/cart-item.model';
 import { GetProductByIdPort } from '../ports/output/get-product-by-id.port';
 import { CartItemOperationResult } from '../../domain/models/cart-item-operation-result.interface';
-import { LoggerPort } from '@nest-upskilling/common';
+import { LoggerPort } from '@pad_lab/common';
 
 export class AddToCartUseCase implements AddToCartPort {
   constructor(

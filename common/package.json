@@ -1,5 +1,5 @@
 {
-  "name": "@nest-upskilling/common",
+  "name": "@pad_lab/common",
   "version": "1.0.2",
   "description": "Common classes for the nest-ecommerce project.",
   "main": "dist/index.js",
@@ -24,6 +24,6 @@
   },
   "files": [
     "dist",
-    "grpc/**/*.proto"
+    "protos/**/*.proto"
   ]
 }

@@ -5,7 +5,7 @@ import {ClientGrpc} from '@nestjs/microservices';
 import {firstValueFrom} from 'rxjs';
 import {CartRepositoryToken, CircuitBreakerServiceToken} from '../../../tokens/cart-tokens';
 import {CartRepository} from '../../../domain/repositories/cart.repository';
-import {LoggerAdapterToken, LoggerPort, CircuitBreakerService} from '@nest-upskilling/common';
+import {LoggerAdapterToken, LoggerPort, CircuitBreakerService} from '@pad_lab/common';
 
 @Injectable()
 export class InitOrderAdapter implements InitOrderPort, OnModuleInit {

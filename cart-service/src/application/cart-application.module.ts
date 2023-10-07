@@ -16,7 +16,7 @@ import { GetProductByIdPort } from './ports/output/get-product-by-id.port';
 import { ClearCartUseCase } from './usecases/clear-cart.usecase';
 import { RemoveItemUseCase } from './usecases/remove-item.usecase';
 import { CartInfrastructureModule } from '../infrastructure/cart-infrastructure.module';
-import { LoggerAdapterToken, LoggerPort, LoggerModule } from '@nest-upskilling/common';
+import { LoggerAdapterToken, LoggerPort, LoggerModule } from '@pad_lab/common';
 
 @Module({
   imports: [CartInfrastructureModule, LoggerModule],

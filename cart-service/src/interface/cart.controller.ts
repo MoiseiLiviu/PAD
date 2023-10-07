@@ -26,7 +26,7 @@ import { RemoveItemPort } from '../application/ports/input/remove-item.port';
 import { CartRepository } from '../domain/repositories/cart.repository';
 import { CartMapper } from './cart.mapper';
 import { InitOrderPort } from '../application/ports/output/init-order.port';
-import { LoggerAdapterToken, LoggerPort } from '@nest-upskilling/common/dist';
+import { LoggerAdapterToken, LoggerPort } from '@pad_lab/common/dist';
 
 @Controller()
 export class CartController {

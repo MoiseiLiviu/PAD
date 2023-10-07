@@ -11,7 +11,7 @@ async function bootstrap() {
       transport: Transport.GRPC,
       options: {
         package: protobufPackage,
-        protoPath: path.resolve(__dirname, '../../protos/proto/cart.proto'),
+        protoPath: 'node_modules/@pad_lab/common/protos/proto/cart.proto',
         url: '0.0.0.0:5004',
       },
     },

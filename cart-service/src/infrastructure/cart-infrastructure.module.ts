@@ -14,7 +14,7 @@ import {
 import {CheckProductAvailabilityAdapter} from './adapters/product/check-product-availability.adapter';
 import {GetProductByIdAdapter} from './adapters/product/get-product-by-id.adapter';
 import {InitOrderAdapter} from './adapters/order/init-order-adapter.service';
-import {CircuitBreakerService, LoggerModule} from '@nest-upskilling/common';
+import {CircuitBreakerService, LoggerModule} from '@pad_lab/common';
 import {ConfigService} from '@nestjs/config';
 import * as path from 'path';
 
@@ -31,7 +31,7 @@ import * as path from 'path';
                     options: {
                         url: configService.get<string>('PRODUCT_SERVICE_URL'),
                         package: productProto.protobufPackage,
-                        protoPath: path.resolve(__dirname, '../../../protos/proto/product.proto'),
+                        protoPath: 'node_modules/@pad_lab/common/protos/proto/product.proto'
                     },
                 }),
             },
@@ -43,7 +43,7 @@ import * as path from 'path';
                     options: {
                         url: configService.get<string>('ORDER_SERVICE_URL'),
                         package: orderProto.protobufPackage,
-                        protoPath: path.resolve(__dirname, '../../../protos/proto/order.proto'),
+                        protoPath: 'node_modules/@pad_lab/common/protos/proto/order.proto'
                     },
                 }),
             },

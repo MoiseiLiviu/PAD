@@ -2,7 +2,7 @@ import {GetProductByIdPort} from '../../../application/ports/output/get-product-
 import {Inject, Injectable} from '@nestjs/common';
 import {Product} from '../../../domain/models/product.model';
 import {CircuitBreakerServiceToken, ProductServiceToken} from '../../../tokens/cart-tokens';
-import {CircuitBreakerService} from '@nest-upskilling/common'
+import {CircuitBreakerService} from '@pad_lab/common'
 import {ProductPayload, ProductServiceClient} from './proto/product.pb';
 import {firstValueFrom} from 'rxjs';
 
