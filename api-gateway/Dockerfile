@@ -1,25 +1,32 @@
-# Stage 1: Build
-FROM node:18 as build
+# Use the official Golang image to create a build artifact.
+FROM golang:1.20 AS builder
 
-WORKDIR /usr/src/app
+# Set the working directory outside of $GOPATH to enable the support for Go modules.
+WORKDIR /src
 
-COPY package*.json ./
+# Copy go mod and sum files first
+COPY go.mod go.sum ./
 
-RUN npm install
+# Install dependencies
+RUN go mod download
 
+# Copy the local package files to the container workspace.
 COPY . .
 
-RUN npm run build
+# Build the application.
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /go/bin/api-gateway
 
-# Stage 2: Run
-FROM node:18-alpine
+# Use the alpine image to create a lean production container.
+FROM alpine:3.15 AS final
 
-WORKDIR /usr/src/app
+# Install necessary libraries for security.
+RUN apk --no-cache add ca-certificates
 
-COPY --from=build /usr/src/app/dist ./dist
-COPY --from=build /usr/src/app/node_modules ./node_modules
-COPY --from=build /usr/src/app/package*.json ./
+# Set the binary to the container's binary directory.
+COPY --from=builder /go/bin/api-gateway /go/bin/api-gateway
 
-EXPOSE 3000
+# Set the current directory.
+WORKDIR /root/
 
-CMD [ "node", "dist/main.js" ]
+# Command to run the executable.
+ENTRYPOINT ["/go/bin/api-gateway"]
