@@ -20,7 +20,7 @@ import (
 )
 
 var (
-	maxConcurrentTasks = 20 // specify the maximum number of concurrent tasks
+	maxConcurrentTasks = 20
 	sem                = make(chan struct{}, maxConcurrentTasks)
 )
 
@@ -108,14 +108,12 @@ func releaseSem() { <-sem }
 
 func contextMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		// Acquire semaphore (wait if it's full)
 		acquireSem()
 		defer releaseSem()
 
-		// Set timeout for the request
-		timeoutDuration := 5 * time.Second // change this to whatever timeout you need
+		timeoutDuration := 5 * time.Second
 		ctx, cancel := context.WithTimeout(r.Context(), timeoutDuration)
-		defer cancel() // cancel the context when the handler returns
+		defer cancel()
 
 		ctx = context.WithValue(ctx, "ResponseWriter", w)
 		ctx = context.WithValue(ctx, "Request", r)
