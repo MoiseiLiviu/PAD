@@ -24,3 +24,10 @@ spec:
               value: catalog:5002
             - name: ORDER_SERVICE_URL
               value: order:5003
+          livenessProbe:
+            exec:
+              command:
+                - "grpc-health-probe"
+                - "-addr=:5004"
+            initialDelaySeconds: 15
+            timeoutSeconds: 5

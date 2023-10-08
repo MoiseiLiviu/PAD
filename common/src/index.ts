@@ -7,4 +7,3 @@ export * from './dto';
 export * from './entities';
 export * from './config';
 export * from './constants';
-export * from './service';

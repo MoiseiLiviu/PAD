@@ -5,7 +5,8 @@ import {ClientGrpc} from '@nestjs/microservices';
 import {firstValueFrom} from 'rxjs';
 import {CartRepositoryToken, CircuitBreakerServiceToken} from '../../../tokens/cart-tokens';
 import {CartRepository} from '../../../domain/repositories/cart.repository';
-import {LoggerAdapterToken, LoggerPort, CircuitBreakerService} from '@pad_lab/common';
+import {LoggerAdapterToken, LoggerPort} from '@pad_lab/common';
+import {CircuitBreakerService} from "../circuit-breaker.service";
 
 @Injectable()
 export class InitOrderAdapter implements InitOrderPort, OnModuleInit {
@@ -35,13 +36,16 @@ export class InitOrderAdapter implements InitOrderPort, OnModuleInit {
             `Initiating order for user with id: ${userId},
       items: ${items}`,
         );
-        const response: InitOrderResponse = await firstValueFrom(
-            this.circuitBreaker.handleRequest$(this.orderServiceClient.initOrder({
-                userId,
-                items,
-            })),
-        );
-
-        return response.orderId;
+        try {
+            const response: InitOrderResponse = await firstValueFrom(
+                this.orderServiceClient.initOrder({
+                    userId,
+                    items,
+                }),
+            );
+            return response.orderId;
+        } catch (e) {
+            this.circuitBreaker.trackError('InitOrder')
+        }
     }
 }

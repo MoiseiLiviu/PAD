@@ -36,3 +36,5 @@ spec:
               value: catalog:5002
             - name: ORDER_SERVICE_URL
               value: order:5003
+            - name: REDIS_URL
+              value: redis:6379

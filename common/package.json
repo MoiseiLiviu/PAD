@@ -1,6 +1,6 @@
 {
   "name": "@pad_lab/common",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Common classes for the nest-ecommerce project.",
   "main": "dist/index.js",
   "types": "dist/index.d.js",

@@ -14,9 +14,10 @@ import {
 import {CheckProductAvailabilityAdapter} from './adapters/product/check-product-availability.adapter';
 import {GetProductByIdAdapter} from './adapters/product/get-product-by-id.adapter';
 import {InitOrderAdapter} from './adapters/order/init-order-adapter.service';
-import {CircuitBreakerService, LoggerModule} from '@pad_lab/common';
+import {LoggerModule} from '@pad_lab/common';
 import {ConfigService} from '@nestjs/config';
-import * as path from 'path';
+import {CircuitBreakerService} from "./adapters/circuit-breaker.service";
+import {HealthService} from "./adapters/health.service";
 
 @Module({
     imports: [
@@ -50,6 +51,7 @@ import * as path from 'path';
         ]),
     ],
     providers: [
+        HealthService,
         {
             inject: ['PRODUCT_PACKAGE'],
             useFactory: (clientGrpc: ClientGrpc) =>
@@ -72,8 +74,8 @@ import * as path from 'path';
         },
         {
             provide: CircuitBreakerServiceToken,
-            useClass: CircuitBreakerService
-        }
+            useFactory: (healthSvc: HealthService) => new CircuitBreakerService(5000, healthSvc),
+        },
     ],
     exports: [
         CartDataAccessModule,

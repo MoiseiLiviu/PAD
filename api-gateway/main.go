@@ -16,6 +16,12 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"log"
 	"net/http"
+	"time"
+)
+
+var (
+	maxConcurrentTasks = 20 // specify the maximum number of concurrent tasks
+	sem                = make(chan struct{}, maxConcurrentTasks)
 )
 
 func main() {
@@ -97,10 +103,23 @@ func main() {
 	log.Fatal(http.ListenAndServe(":"+cfg.Port, nil))
 }
 
+func acquireSem() { sem <- struct{}{} }
+func releaseSem() { <-sem }
+
 func contextMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		ctx := context.WithValue(r.Context(), "ResponseWriter", w)
+		// Acquire semaphore (wait if it's full)
+		acquireSem()
+		defer releaseSem()
+
+		// Set timeout for the request
+		timeoutDuration := 5 * time.Second // change this to whatever timeout you need
+		ctx, cancel := context.WithTimeout(r.Context(), timeoutDuration)
+		defer cancel() // cancel the context when the handler returns
+
+		ctx = context.WithValue(ctx, "ResponseWriter", w)
 		ctx = context.WithValue(ctx, "Request", r)
+
 		next.ServeHTTP(w, r.WithContext(ctx))
 	})
 }

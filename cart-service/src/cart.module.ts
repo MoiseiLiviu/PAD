@@ -5,6 +5,7 @@ import { CartApplicationModule } from './application/cart-application.module';
 import { CartInfrastructureModule } from './infrastructure/cart-infrastructure.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { LoggerModule } from "@pad_lab/common/dist";
+import {HealthController} from "./interface/health.controller";
 
 @Module({
   imports: [
@@ -23,7 +24,7 @@ import { LoggerModule } from "@pad_lab/common/dist";
     CartApplicationModule,
     CartInfrastructureModule,
   ],
-  controllers: [CartController],
+  controllers: [CartController, HealthController],
 })
 export class CartModule {
   constructor(private readonly configService: ConfigService) {

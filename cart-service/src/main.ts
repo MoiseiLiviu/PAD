@@ -10,8 +10,8 @@ async function bootstrap() {
     {
       transport: Transport.GRPC,
       options: {
-        package: protobufPackage,
-        protoPath: 'node_modules/@pad_lab/common/protos/proto/cart.proto',
+        package: [protobufPackage,'grpc.health.v1'],
+        protoPath: ['node_modules/@pad_lab/common/protos/proto/cart.proto','node_modules/@pad_lab/common/protos/proto/health.proto'],
         url: '0.0.0.0:5004',
       },
     },
