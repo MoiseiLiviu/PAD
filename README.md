@@ -220,3 +220,11 @@ newQuantity: Int!
    service discovery, fault tolerance and so on.
 
 This setup will ensure scalability, reliability, and ease of management.
+
+### To deploy the app:
+
+1. Apply all the yaml files inside the k8s-infra folder to your local cluster.
+2. Connect to the postgres instance and create all the required dbs:
+   - kubectl port-forward pgsql 5432:5432
+   - access the instance on localhost and create the dbs: user, catalog, payment, order
+3. The gateway service will be available at localhost:30000, fetch the graphql schema and start calling the endpoints.
