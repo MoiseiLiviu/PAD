@@ -19,7 +19,7 @@ spec:
             - containerPort: 5004
           env:
             - name: MONGO_URL
-              value: mongodb://mongodb:27017/nest
+              value: mongodb://mongodb:27017
             - name: PRODUCT_SERVICE_URL
               value: catalog:5002
             - name: ORDER_SERVICE_URL
