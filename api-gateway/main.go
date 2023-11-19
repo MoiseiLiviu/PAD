@@ -30,13 +30,15 @@ func main() {
 		panic(err)
 	}
 
-	rdb := redis.NewClient(&redis.Options{
-		Addr:     cfg.RedisUrl,
-		Password: "",
-		DB:       0,
+	rdb := redis.NewRing(&redis.RingOptions{
+		Addrs: map[string]string{
+			"shard1": "redis-service-1:6379",
+			"shard2": "redis-service-2:6379",
+			"shard3": "redis-service-3:6379",
+		},
 	})
 
-	defer func(rdb *redis.Client) {
+	defer func(rdb *redis.Ring) {
 		err := rdb.Close()
 		if err != nil {
 			panic(err)

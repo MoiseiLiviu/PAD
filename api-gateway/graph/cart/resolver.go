@@ -23,10 +23,10 @@ type Resolver interface {
 
 type resolver struct {
 	svc         Service
-	redisClient *redis.Client
+	redisClient *redis.Ring
 }
 
-func NewResolver(svc Service, redisClient *redis.Client) Resolver {
+func NewResolver(svc Service, redisClient *redis.Ring) Resolver {
 	return &resolver{svc: svc,
 		redisClient: redisClient}
 }

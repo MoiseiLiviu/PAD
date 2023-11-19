@@ -7,7 +7,7 @@ import (
 )
 
 type Config struct {
-	RedisUrl          string `env:"REDIS_URL" envDefault:"localhost:6379"`
+	//RedisNodesUrls    []string `env:"REDIS_NODES_URLS" envSeparator:","`
 	OrderServiceUrl   string `env:"ORDER_SERVICE_URL" envDefault:"localhost:5003"`
 	CatalogServiceUrl string `env:"PRODUCT_SERVICE_URL" envDefault:"localhost:5002"`
 	AuthServiceUrl    string `env:"AUTH_SERVICE_URL" envDefault:"localhost:5001"`
