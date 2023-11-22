@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
         - name: cart
-          image: lmoisei/cart-service:latest
+          image: lmoisei/cart-service:20231008092108
           ports:
             - containerPort: 5004
           env:
             - name: MONGO_URL
-              value: mongodb://mongodb:27017
+              value: mongodb://root:jn3NEYx14D@cart-db-mongodb-0.cart-db-mongodb-headless.default.svc.cluster.local:27017,cart-db-mongodb-1.cart-db-mongodb-headless.default.svc.cluster.local:27017,cart-db-mongodb-2.cart-db-mongodb-headless.default.svc.cluster.local:27017,cart-db-mongodb-3.cart-db-mongodb-headless.default.svc.cluster.local:27017/cart?replicaSet=rs0&authSource=admin
             - name: PRODUCT_SERVICE_URL
               value: catalog:5002
             - name: ORDER_SERVICE_URL

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-express
+  labels:
+    app: mongo-express
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-express
+  template:
+    metadata:
+      labels:
+        app: mongo-express
+    spec:
+      containers:
+        - name: mongo-express
+          image: mongo-express
+          env:
+            - name: ME_CONFIG_MONGODB_SERVER
+              value: "cart-db-mongodb-0.cart-db-mongodb-headless.default.svc.cluster.local:27017,cart-db-mongodb-1.cart-db-mongodb-headless.default.svc.cluster.local:27017,cart-db-mongodb-2.cart-db-mongodb-headless.default.svc.cluster.local:27017,cart-db-mongodb-3.cart-db-mongodb-headless.default.svc.cluster.local"
+            - name: ME_CONFIG_MONGODB_ADMINUSERNAME
+              value: "root"
+            - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+              value: "jn3NEYx14D"
