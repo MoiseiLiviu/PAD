@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "1f85e965-2869-4daf-8311-2945c0c073a3",
+		"name": "PAD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25788447"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n  registerUser(input: { email: \"user12327@mail.ru\", password: \"secret\" })\n}\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    login(input: {\n        email: \"user12327@mail.ru\",\n        password: \"secret\"\n    })\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    refresh\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    logout\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    createCategory(input: {\n        name: \"test\",\n        description: \"music\"\n    }) {\n        name,\n        description,\n        id\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query{\n  categories{\n    name, description, id\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    createProduct(input: {\n        name: \"test1\",\n        price: 50.50,\n        unitsAvailable: 20,\n        categoriesIds: 3,\n    }) {\n        name,\n        id,\n        price,\n        categories{\n            name,\n            id\n        }\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query{\n    product(id: 1){\n        name,\n        id,\n        unitsAvailable,\n        categories{\n            name,\n            id\n        },\n        price,\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "Add to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    addToCart(input: {\n        productId: 2,\n        quantity: 2\n    })\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cart for current user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n    cart{\n        userId,\n        items {\n            productId, \n            name,\n            price,\n            quantity\n        }\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update item quantity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    updateItemQuantity(input: {\n        productId: 3,\n        newQuantity: 5\n    })\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    clearCart\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove item from cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n    removeItem(productId: 1)\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Init order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\n    initOrder {\n        orderId\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "Get order status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query{\n    orderStatus(orderId: 2){\n        value\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/query",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"query"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/health",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
